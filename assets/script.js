@@ -22,6 +22,11 @@ const slides = [
 const leftArrow = document.querySelector('.arrow_left');
 const rightArrow = document.querySelector('.arrow_right');
 
+//variables pour les points que je recupere dans mon html :
+
+const dot = document.querySelector('.dot');
+const currentDot = document.querySelector('.dot_selected');
+
 //Events que j'assigne à mes variable, execution du contenu defini, ici console log, au clic :
 
 leftArrow.addEventListener('click', () => {
@@ -29,5 +34,6 @@ leftArrow.addEventListener('click', () => {
 });
 
 rightArrow.addEventListener('click', () => {
+	currentDot.classList.remove('dot_selected');
 	console.log("fleche droite clique");
 });
