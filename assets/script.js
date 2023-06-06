@@ -16,3 +16,18 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+
+//variables pour chaque fleche que je recupere dans mon html :
+
+const leftArrow = document.querySelector('.arrow_left');
+const rightArrow = document.querySelector('.arrow_right');
+
+//Events que j'assigne à mes variable, execution du contenu defini, ici console log, au clic :
+
+leftArrow.addEventListener('click', () => {
+	console.log("fleche gauche clique");
+});
+
+rightArrow.addEventListener('click', () => {
+	console.log("fleche droite clique");
+});
