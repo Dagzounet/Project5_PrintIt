@@ -3,7 +3,7 @@ const slides = [
 	{
 		"image":"slide1.jpg",
 		"tagLine":"Impressions tous formats <span>en boutique et en ligne</span>"
-	},
+	}, // ne pas oublier la virgule
 	{
 		"image":"slide2.jpg",
 		"tagLine":"Tirages haute définition grand format <span>pour vos bureaux et events</span>"
@@ -15,7 +15,7 @@ const slides = [
 	{
 		"image":"slide4.png",
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
-	}
+	},
 ]
 
 // Je récupère les éléments nécessaires dans mon HTML : ici la baniere et son texte, les fleches, les points.
@@ -26,7 +26,7 @@ const arrowRight = document.querySelector(".arrow_right");
 const dotsContainer = document.getElementById('dots_container'); // je récupère le container pour mes dots.
 dotsContainer.classList.add('dots'); // j'ajoute la class "dots" pour les positioner correctement (flex, absolute, bottom).
 
-for (let i=0; i < 4; i++) { //création d'une boucle, afin de répété 4 fois l'opération pour avoir 4 points.
+for (let i=0; i < slides.length; i++) { //création d'une boucle, afin de répété l'opération autant de fois qu'il y a de slides.
 const dot = document.createElement('span'); // je créer la constant "dot" qui créer des span dans le html.
 dot.classList.add('dot'); // j'ajoute la class "dot" à "dot" donc chacun des span crée ci dessus.
 dotsContainer.appendChild(dot); // ici j'assigne "dot" comme enfant de "dotsContainer".
