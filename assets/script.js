@@ -22,7 +22,17 @@ const slides = [
 const banner = document.getElementById("banner");
 const arrowLeft = document.querySelector(".arrow_left");
 const arrowRight = document.querySelector(".arrow_right");
-const dots = document.querySelectorAll(".dot");
+
+const dotsContainer = document.getElementById('dots_container'); // je récupère le container pour mes dots.
+dotsContainer.classList.add('dots'); // j'ajoute la class "dots" pour les positioner correctement (flex, absolute, bottom).
+
+for (let i=0; i < 4; i++) { //création d'une boucle, afin de répété 4 fois l'opération pour avoir 4 points.
+const dot = document.createElement('span'); // je créer la constant "dot" qui créer des span dans le html.
+dot.classList.add('dot'); // j'ajoute la class "dot" à "dot" donc chacun des span crée ci dessus.
+dotsContainer.appendChild(dot); // ici j'assigne "dot" comme enfant de "dotsContainer".
+}
+
+const dots = document.querySelectorAll(".dot"); // création de la constante "dots" qui récupère les dot nouvellement crée dans le html.
 const tagLine = document.querySelector("#banner p");
 
 let currentSlide = 0; // Je créer un index pour la diapositive actuelle
@@ -39,9 +49,11 @@ function updateSlide() {
 
   // Mise à jour des points qui s'aligne sur l'index par un égal à currentSlide:
   dots.forEach((dot, index) => {
-    dot.classList.toggle("dot_selected", index === currentSlide);
+    dot.classList.toggle("dot_selected", index === currentSlide); //si l'index est bien égal, alors le dot_selected disparait puis apparait avec le toggle.
   });
 }
+
+updateSlide (); // j'appelle immédiatement la fonction après sa création pour avoir le dot_selected sur ma première slide.
 
 // Événement clic sur la flèche de gauche (si la slide actuel est égale à 0, alors définir la variable à -1 pour la précédente, sinon retirer 1)
 arrowLeft.addEventListener("click", () => {
