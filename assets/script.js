@@ -23,6 +23,10 @@ const banner = document.getElementById("banner");
 const arrowLeft = document.querySelector(".arrow_left");
 const arrowRight = document.querySelector(".arrow_right");
 
+const divdotscontainer = document.createElement("div");  //création de la div qui va servir de container aux dots.
+divdotscontainer.setAttribute("id","dots_container"); //ajout de l'id dots_container à la div
+banner.appendChild(divdotscontainer); //assignation de la div avec id "dots_container" en tant qu'enfant de la div avec id "banner".
+
 const dotsContainer = document.getElementById('dots_container'); // je récupère le container pour mes dots.
 dotsContainer.classList.add('dots'); // j'ajoute la class "dots" pour les positioner correctement (flex, absolute, bottom).
 
